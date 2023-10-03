@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+</head>
+<body ng-controller="sectionController">
+    <div class="vh-100 p-3 mb-2  d-flex justify-content-center align-items-center ">
+      <div class="col-md-4">
+        <div class="card mb-3 bg-trasparent shadow-lg p-3 mb-5 bg-body-tertiary rounded ">
+          <div class="row g-0">
+                  <div class=" row col">
+                    <div class="card-body">
+                      <form class="row rounded-5 g-0 "ng-submit="submitForm()" enctype="multipart/form-data">
+                        <h1 class="text-center mb-5 text-success ">Add Section</h1>
+                        <div class="mb-4">
+                          <label for="textInput" class="form-label">Name of the section</label>
+                          <input type="text" 
+                                name="textInput" class="form-control form-control border-success " placeholder="Enter name" id="textInput" aria-describedby="emailHelp" ng-model="formData.text" required>
+                            </div>
+                            <div class="mb-4">
+                              <div class="input-group mb-3">
+                                <label class="input-group-text" for="imageInput">Image for the section</label>
+                                <input type = "file"  id="imageInput" name="imageInput" file-model="formData.image" required>
+                              </div>
+                            </div>
+                            <div class="d-grid gap-2 col-5 mx-auto">
+                              <input type="submit" value="Submit" class="btn btn-outline-success" >
+                            </div>
+                              <div class="d-grid gap-2 col-5 mx-auto">
+                                <button class="btn btn-outline-success" ng-click="back()"> Back</button>
+                            </div>
+                    </form>
+                  </div>
+                </div>
+              </div> 
+            </div>
+          </div>
+        </div>
+        </body>
+        </html>

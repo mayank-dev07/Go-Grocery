@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <body ng-app="myModule" ng-controller="addController">
+  <nav class="navbar bg-body-tertiary p-4 bg-success-subtle">
+    <div class="container-fluid">
+      <a class="navbar-brand text-success">Go Grocery</a>
+       <div class="d-flex w-25 justify-content-evenly">
+        </div>
+      </div>
+    </div>
+  </nav>
+  <section class="h-100" style="background-color: #eee;">
+    <div class="container h-100 py-5">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-10">
+  
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="fw-normal mb-0 text-black">Shopping Cart</h3>
+            <div>
+            </div>
+          </div>
+  
+          <div class="card rounded-3 mb-4">
+            <div class="card-body p-4">
+              <div class="row d-flex justify-content-between align-items-center" ng-repeat="grocery in groceries">
+                <div class="col-md-2 m-2">
+                  <img
+                  ng-src="https://10.21.80.137:8000{{ grocery.image }}"
+                    class="img-fluid rounded-3" alt="">
+                </div>
+                <div class="col-md-2">
+                  <p class="lead fw-normal mb-2">{{ grocery.name }}</p>
+                </div>
+                <div class="d-flex col-md-2">
+                  <button class="btn btn-link decrease-quantity" ng-click="decrementQuantity(grocery)">
+                    <i class="fa fa-minus" style="color: #57a782;"></i>
+                  </button>
+                
+                  <input id="form1" min="1" name="quantity" ng-model="grocery.quantity" type="number"
+                    class="form-control form-control-sm" style="appearance: textfield;" data-product-id="{{ grocery.productid }}" />
+                
+                  <button class="btn btn-link px-2 increase-quantity" ng-click="incrementQuantity(grocery)">
+                    <i class="fa fa-plus" style="color: #57a782;"></i>
+                  </button>
+                </div>
+                
+                <div class="col-md-2 col-lg-2 col-xl-2 offset-lg-1">
+                  <h5 class="mb-0">{{ grocery.Netprice }}</h5>
+                </div>
+                <div class="col-md-2  ">
+                  <button class="btn btn-outline-success" ng-click="remove(grocery.productid)">Remove</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-5">
+            <div class="card-body p-4">
+              <div class="float-start">
+                <p class="mb-0 me-5 d-flex align-items-center">
+                  <span class="text-muted me-2">Order total:</span> <span
+                    class="lead fw-normal">{{ totalamount }}</span>
+                </p>
+              </div>
+              <div class="float-end">
+                <button  class="btn btn-outline-success" ng-click="addgrocery()">Add grocery</button>
+                <button  class="btn btn-outline-success ms-5" ng-click="buy()">Buy now</button>
+              </div>
+        </div>
+      </div>
+    </div>
+ </div>
+
+  </section>
+</body>
+</html>

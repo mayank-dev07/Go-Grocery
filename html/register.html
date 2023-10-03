@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.27/angular-ui-router.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+<body ng-app="myModule" ng-controller="registerController">
+  <div class="vh-100 p-3 mb-2  d-flex justify-content-center align-items-center ">
+    <div class="row">
+      <div class="col-md-1">
+
+        </div>
+        <div class="col-md-4" >
+          <img src="images/niche-service-marketplace-concept-illustration_114360-7403.avif"
+          class="img-fluid" alt="Phone image" >
+  </div>
+  <div class="col-md-1">
+
+  </div>
+  <div class="col-md-5 ">
+    <div class="card 
+   mt-5 mb-3 bg-trasparent shadow-lg p-3 mb-5 bg-body-tertiary rounded ">
+        <div class="row g-0">
+            <div class=" row col">
+                <div class="card-body">
+                    <form class="row ">
+                        <h1 class="text-center mb-5 text-success ">Registeration</h1>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label for="exampleInputName" class="form-label"> User name</label>
+                            <input type="text" class="form-control form-control border-success " id="exampleInputName" aria-describedby="emailHelp" ng-model="registerationuserName" required>
+                          </div>
+                          <div class="col-md-6">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control form-control border-success" id="exampleInputEmail1" aria-describedby="emailHelp" ng-model="registerationEmail" required>
+                            <div id="emailHelp" class="form-text"></div>
+                          </div>
+                        </div>
+
+                        <div class="row mt-3">
+                          <div class="col-md-6">
+                            <label for="exampleInputfName" class="form-label">First name</label>
+                        <input type="text" class="form-control form-control border-success " id="exampleInputfName" aria-describedby="emailHelp" ng-model="registerationfirstName">
+                   </div>
+                          <div class="col-md-6">
+                            <label for="exampleInputlName" class="form-label">Last name</label>
+                        <input type="text" class="form-control form-control border-success " id="exampleInputlName" aria-describedby="emailHelp" ng-model="registerationlastName">
+                  <div id="emailHelp" class="form-text"></div>
+                          </div>
+                        </div>
+
+                        <div class="row mt-3">
+                          <div class="col-md-6">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control form-control border-success" id="exampleInputPassword1" ng-model="registerationPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                        </div>
+                          <div class="col-md-6">
+                            <label for="exampleInputPassword" class="form-label"> Confirm</label>
+                            <input type="password" class="form-control form-control border-success" id="exampleInputPassword" ng-model="registerationConfirmPassword">
+                         <div id="emailHelp" class="form-text"></div>
+                          </div>
+                        </div>
+                        <div class="d-grid gap-2 col-5 mx-auto mt-5">
+                            <button class="btn btn-outline-success" type="button" ng-click="registeration()">Register</button>
+                        </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+
+</div>
+</div>  
+</body>
+</html>

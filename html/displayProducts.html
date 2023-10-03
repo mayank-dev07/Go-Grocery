@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.27/angular-ui-router.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</head>
+<body ng-app="myModule" ng-controller="displayProductController">
+    <nav class="navbar bg-body-tertiary p-4 bg-success-subtle">
+  <div class="container-fluid">
+    <a class="navbar-brand text-success">Go Grocery</a>
+    <form class="d-flex w-50 " role="search">
+      <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success me-5" type="submit">Search</button>
+    </form>
+    <button class=" btn btn-outline-success" style="font-size:20px" ng-click="logout()">Logout</button>
+  </div>
+</div>
+</nav>
+<div class="text-center mt-3">
+  <button class="btn btn-outline-success" ng-click="back()">Back to manager page</button>
+  
+  
+</div>
+<div class="container-fluid m-5 ">
+  <span class="link-dark text-decoration-none" style="font-size: 26px">Products</span>
+  <div class="row justify-content-md-center p-3 me-5 rounded">
+    <div class="col col-lg-2" ng-repeat="product in products">
+      <div class="card mt-5">
+        <image ng-src="https://10.21.80.137:8000{{ product.image }}" alt="Picture" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5>{{product.name}}</h5>
+          <h5>Rs-/{{product.price}}</h5>
+          <!-- <h5>{{product.ProductDescription}}</h5> -->
+          <div class="d-flex justify-content-center">
+            <div class="row">
+                <div class="col-md-6">
+                    <button class="btn btn-outline-success" ng-click="edit(product.id, product.name, product.price)">Edit</button>
+                </div>
+                <div class="col-md-6">
+                    <button class="btn btn-outline-success" ng-click="delete(product.id)">Delete</button>
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+

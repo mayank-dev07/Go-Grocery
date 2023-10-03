@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.27/angular-ui-router.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</head>
+<body ng-app="myModule" ng-controller="managerController">
+    <nav class="navbar bg-body-tertiary p-4 bg-success-subtle">
+  <div class="container-fluid">
+    <a class="navbar-brand text-success">Go Grocery</a>
+    <form class="d-flex w-50 " role="search">
+      <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success me-5" type="submit">Search</button>
+    </form>
+    <div class="row">
+      <div class="col-md-8">
+        <button class="btn btn-outline-success" style="font-size: 20px;" ng-click="addSection()">Add sections</button>
+      </div>
+      <div class="col-md-4">
+        <button class=" btn btn-outline-success" style="font-size:20px" ng-click="logout()">Logout</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+</nav><div class="text-center mt-3">
+  <button class="btn btn-outline-success" ng-click="showProduct()">Show all product</button>
+</div>
+<div class="container mt-5 mb-5">
+  <span class="link-dark text-decoration-none" style="font-size: 26px">Sections</span>
+  <div class="row justify-content-md-center bg-success-subtle shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+    <div class="col col-lg-3 p-4" ng-repeat="section in sections">
+      <div class="card">
+        <image ng-src="https://10.21.80 .137:8000{{ section.image }}" alt="Picture" class="card-img-top img-fluid rounded  d-block img-thumbnail">
+        <div class="card-body">
+          <h5 class="d-flex justify-content-center"> {{ section.name }} </h5>
+          <div class="d-flex justify-content-between">
+              <div>
+                <button class="btn btn-outline-success" ng-click="deleteSection(section.id)">Delete</button>
+              </div>
+              <div>
+                <button class="btn btn-outline-success" ng-click="addProduct(section.id)">Add</button>
+              </div>
+              <div>
+                <button class="btn btn-outline-success" ng-click="editSection(section.id, section.name)">Edit</button>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+  </div>
+</div>
+</body>
+</html>
